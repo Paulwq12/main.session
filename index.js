@@ -3,8 +3,18 @@ const { default: makeWASocket, useSingleFileAuthState } = require('@adiwajshing/
 const fs = require('fs');
 const path = require('path');
 
+// Initialize express app
 const app = express();
+
+// Serve static files from the 'public' folder (includes CSS, JS, etc.)
 app.use(express.static('public'));
+
+// Serve index.html on the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Authentication state
 const { state, saveState } = useSingleFileAuthState('./auth_info.json');
 
 // Route to generate QR code for session
@@ -58,4 +68,5 @@ app.get('/generate-pairing', async (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log('Server is running on http://localhost:3000'));
+// Vercel needs to export the server handler as the default export for serverless functions
+module.exports = app;
