@@ -1,0 +1,120 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background gradient */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #00b5e2, #1f75e0);
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main container to center everything */
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Button styles */
+button {
+    background-color: #008CBA;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Input field styles */
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+input[type="text"]:focus {
+    border-color: #008CBA;
+    outline: none;
+}
+
+/* QR Code container */
+#qr-container, #pairing-container {
+    display: none;
+    margin-top: 20px;
+}
+
+/* QR code image styling */
+#qr-image {
+    max-width: 100%;
+    margin-top: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+/* Pairing code text */
+#pairing-code {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.2rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+}
